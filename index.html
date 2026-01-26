@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJC Couture - Premier Luxury Event Planning in Zambia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #fff;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(197, 157, 95, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(197, 157, 95, 0.15) 0%, transparent 50%);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            color: #c59d5f;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #c59d5f;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            border: 2px solid #c59d5f;
+            cursor: pointer;
+        }
+
+        .cta-primary:hover {
+            background: transparent;
+            color: #c59d5f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(197, 157, 95, 0.3);
+        }
+
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            color: #2c2c2c;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            padding: 40px;
+            background: #f9f9f9;
+            border-left: 3px solid #c59d5f;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #c59d5f;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: #fff;
+            padding: 100px 20px;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border: 1px solid rgba(197, 157, 95, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            color: #c59d5f;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(197, 157, 95, 0.3);
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c59d5f;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: #c59d5f;
+            color: #fff;
+            border: 2px solid #c59d5f;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: #c59d5f;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 50px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            border: 2px solid #25D366;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .success-message {
+            display: none;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .testimonials {
+            background: #f5f5f5;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 3px solid #c59d5f;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            margin-top: 20px;
+            font-style: normal;
+            color: #c59d5f;
+            font-weight: 600;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #c59d5f;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">HOME ZM</div>
+            <h1>ELEVATE EVERY MOMENT</h1>
+            <p class="tagline">Premier Luxury Event Planning in Zambia</p>
+            <a href="#contact" class="cta-primary">BEGIN YOUR JOURNEY</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Luxury Weddings</h3>
+                <p>Transform your special day into an unforgettable masterpiece. From intimate ceremonies to grand celebrations, we orchestrate every detail with precision and elegance.</p>
+            </div>
+            <div class="service-card">
+                <h3>Corporate Summits</h3>
+                <p>Elevate your corporate events with seamless execution and sophisticated design. We create premium experiences that leave lasting impressions on your stakeholders.</p>
+            </div>
+            <div class="service-card">
+                <h3>Bespoke Celebrations</h3>
+                <p>Whether it's a milestone anniversary or exclusive gala, we curate personalized experiences that reflect your unique vision and exceed expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-card">
+            "NJC Couture transformed our wedding into a fairy tale. Every detail was perfect, and the execution was flawless. They truly understand luxury."
+            <div class="testimonial-author">— Sarah & Michael</div>
+        </div>
+        <div class="testimonial-card">
+            "Our annual corporate summit was elevated to new heights. The professionalism and attention to detail were exceptional. Highly recommend!"
+            <div class="testimonial-author">— CFO, Tech Corporation</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title" style="color: #fff;">Let's Create Something Extraordinary</h2>
+            <div class="contact-form">
+                <p style="font-size: 1.3rem; text-align: center; margin-bottom: 30px; line-height: 1.8;">
+                    Ready to plan your dream event? Connect with us directly on WhatsApp for immediate assistance and personalized consultation.
+                </p>
+                
+                <div style="text-align: center; margin: 40px 0;">
+                    <a href="https://wa.me/260968695481?text=Hello%20Home%20ZM,%20I'm%20interested%20in%20your%20luxury%20event%20planning%20services.%20I'd%20like%20to%20discuss%20my%20upcoming%20event." 
+                       class="whatsapp-btn" 
+                       target="_blank">
+                        <svg style="width: 24px; height: 24px; margin-right: 12px; vertical-align: middle;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        START WHATSAPP CHAT
+                    </a>
+                </div>
+
+                <p style="font-size: 1.1rem; text-align: center; margin-top: 30px; opacity: 0.8;">
+                    Available Monday - Saturday, 9:00 AM - 6:00 PM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <p><strong>Home ZM</strong></p>
+            <p>Email: <a href="mailto:chansajanessa@gmail.com">chansajanessa@gmail.com</a></p>
+            <p>Phone: <a href="tel:+260968695481">+260 968 695 481</a></p>
+        </div>
+        <p>&copy; 2026 Home ZM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for CTA button
+        document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
