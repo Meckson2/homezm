@@ -244,12 +244,14 @@
             background: #25D366;
             color: #fff;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             letter-spacing: 2px;
             transition: all 0.4s ease;
             border: 2px solid #25D366;
             cursor: pointer;
             font-weight: 500;
+            max-width: 100%;
+            text-align: center;
         }
 
         .whatsapp-btn:hover {
@@ -257,6 +259,10 @@
             border-color: #128C7E;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            flex-shrink: 0;
         }
 
         .success-message {
@@ -335,6 +341,23 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .whatsapp-btn {
+                padding: 16px 30px;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                width: 100%;
+            }
+
+            .whatsapp-btn svg {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+
+            .contact-form p {
+                font-size: 1.1rem;
             }
         }
     </style>
